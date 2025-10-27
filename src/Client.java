@@ -1,8 +1,8 @@
 // Класс клиента
 class Client {
-    private final int id;
-    private double balance;
-    private String currency;
+    private final int id; // Уникальный идентификатор клиента
+    private double balance; // Баланс клиента
+    private String currency; // Валюта клиента
 
     public Client(int id, double balance, String currency) {
         this.id = id;
@@ -13,11 +13,11 @@ class Client {
     public int getId() {
         return id;
     }
-
+    // Синхронизированный метод для получения баланса
     public synchronized double getBalance() {
         return balance;
     }
-
+    // Синхронизированный метод для установки баланса
     public synchronized void setBalance(double balance) {
         this.balance = balance;
     }
@@ -25,7 +25,7 @@ class Client {
     public String getCurrency() {
         return currency;
     }
-
+    // Синхронизированный метод для установки валюты
     public synchronized void setCurrency(String currency) {
         this.currency = currency;
     }
