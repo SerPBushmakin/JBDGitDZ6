@@ -1,8 +1,8 @@
 // Обмен валют
 class CurrencyExchange extends Transaction {
-    final String fromCurrency;
-    final String toCurrency;
-    final double amount;
+    final String fromCurrency; // Валюта, которую меняют
+    final String toCurrency; // Валюта, на которую меняют
+    final double amount; // Сумма для обмена
 
     public CurrencyExchange(int clientId, String fromCurrency, String toCurrency, double amount) {
         super(clientId);
@@ -13,7 +13,7 @@ class CurrencyExchange extends Transaction {
 
     @Override
     public void process(Bank bank) {
-        bank.exchangeCurrency(clientId, fromCurrency, toCurrency, amount);
-        bank.notifyObservers("Exchange: клиент #" + clientId + " обменял " + amount + " " + fromCurrency + " на " + toCurrency);
+        bank.exchangeCurrency(clientId, fromCurrency, toCurrency, amount);// Вызывает метод exchangeCurrency() объекта Bank
+        bank.notifyObservers("Exchange: клиент #" + clientId + " обменял " + amount + " " + fromCurrency + " на " + toCurrency);// Уведомляет наблюдателей
     }
 }

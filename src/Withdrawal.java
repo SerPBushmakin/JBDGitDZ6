@@ -1,6 +1,6 @@
 // Снятие
 class Withdrawal extends Transaction {
-    final double amount;
+    final double amount; // Сумма снятия
 
     public Withdrawal(int clientId, double amount) {
         super(clientId);
@@ -9,7 +9,7 @@ class Withdrawal extends Transaction {
 
     @Override
     public void process(Bank bank) {
-        bank.withdraw(clientId, amount);
-        bank.notifyObservers("Withdraw: клиент #" + clientId + " снял " + amount);
+        bank.withdraw(clientId, amount); // Вызывает метод withdraw() объекта Bank
+        bank.notifyObservers("Withdraw: клиент #" + clientId + " снял " + amount); // Уведомляет наблюдателей
     }
 }
