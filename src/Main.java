@@ -1,7 +1,5 @@
-import java.util.*;
-import java.util.concurrent.*;
 
-// Пользовательский интерфейс 1
+// Пользовательский интерфейс
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         Bank bank = new Bank(3);
